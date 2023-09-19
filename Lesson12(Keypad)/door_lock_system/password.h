@@ -62,7 +62,6 @@ clear_face();
 bool check_password(){
   int password;
   EEPROM.get(0,password);
-  //Serial.println(password);
   String temp="";
  while(temp.length()<4){
      char c=getKey();
@@ -87,7 +86,6 @@ bool check_password(){
 }
 bool create_password(){
  String temp="";
-
  while(temp.length()<5){
     char c=getKey();
     if(c!='?'){
@@ -112,7 +110,6 @@ for(int i=0;i<4;i++){
  }
  int password=temp.substring(0,4).toInt();
  EEPROM.put(0,password);
- EEPROM.put(4,'1');
  EEPROM.commit();
  lcd.clear();  
  lcd.setCursor(0,0);
