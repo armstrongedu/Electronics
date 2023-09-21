@@ -21,8 +21,6 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
     }
 }
 void update_mode(byte balance){
-int red=map(balance,100,0,0,255);
-int green=map(balance,0,100,0,255);
 digitalWrite(buzzer,HIGH);
 delay(50);
 digitalWrite(buzzer,LOW);
