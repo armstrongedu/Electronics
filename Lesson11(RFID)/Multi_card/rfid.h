@@ -1,5 +1,6 @@
 #include <SPI.h>
 #include <MFRC522.h>
+#define buzzer D3
 #define RST_PIN         16           // Configurable, see typical pin layout above
 #define SS_PIN          2          // Configurable, see typical pin layout above
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance

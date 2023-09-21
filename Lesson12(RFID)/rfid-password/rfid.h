@@ -1,5 +1,6 @@
 #include <SPI.h>
 #include <MFRC522.h>
+#define buzzer D3
 #define RST_PIN         16           // Configurable, see typical pin layout above
 #define SS_PIN          2          // Configurable, see typical pin layout above
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance
@@ -20,6 +21,8 @@ void dump_byte_array(byte *buffer, byte bufferSize) {
     }
 }
 void update_mode(byte balance){
+int red=map(balance,100,0,0,255);
+int green=map(balance,0,100,0,255);
 digitalWrite(buzzer,HIGH);
 delay(50);
 digitalWrite(buzzer,LOW);
